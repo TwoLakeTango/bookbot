@@ -12,9 +12,16 @@ from stats import bookbot_output
 
 word_count = get_num_words()
 unique_character_count_dict = character_frequency()
-bookbot_output(unique_character_count_dict)
+dict_list = bookbot_output(unique_character_count_dict)
 
-print("============ BOOKBOT ============\n""Analyzing book found at books/frankenstein.txt...\n""----------- Word Count ----------\n")
+print("============ BOOKBOT ============\n""Analyzing book found at books/frankenstein.txt...\n""----------- Word Count ----------")
 print(f"Found {word_count} total words")
+print("----------- Character Count -----------")
+for i in dict_list:
+    character = i["character"]
+    count = i["count"]
+    if character.isalpha():
+        print(f"{character}: {count}")
+print("============= END ===============")
 
 main()

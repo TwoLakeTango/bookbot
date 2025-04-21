@@ -8,7 +8,7 @@ def get_num_words():
     word_count = 0
     for word in book_text_words:
         word_count += 1
-    print(f"{word_count} words found in the document")
+    #print(f"{word_count} words found in the document")
     return word_count
 
 def character_frequency():
@@ -23,13 +23,13 @@ def character_frequency():
         unique_character_count_dict[character] += 1
     #print(book_text_characters[:8])
     #print(unique_character_count_dict)    
-    print(unique_character_count_dict)
     return unique_character_count_dict
 
 def bookbot_output(unique_character_count_dict):
-    print("=================poop==============")
-    print(unique_character_count_dict)
     dict_list = []
     for character, count in unique_character_count_dict.items():
        dict_list.append({"character": character, "count": count})
-    print(dict_list)
+    def sort_on(dict_list):
+        return dict_list["count"]
+    dict_list.sort(key=sort_on, reverse=True)
+    return dict_list
