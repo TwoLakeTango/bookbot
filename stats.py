@@ -9,6 +9,7 @@ def get_num_words():
     for word in book_text_words:
         word_count += 1
     print(f"{word_count} words found in the document")
+    return word_count
 
 def character_frequency():
     book_text_lower = get_book_text("books/frankenstein.txt").lower()
@@ -23,3 +24,12 @@ def character_frequency():
     #print(book_text_characters[:8])
     #print(unique_character_count_dict)    
     print(unique_character_count_dict)
+    return unique_character_count_dict
+
+def bookbot_output(unique_character_count_dict):
+    print("=================poop==============")
+    print(unique_character_count_dict)
+    dict_list = []
+    for character, count in unique_character_count_dict.items():
+       dict_list.append({"character": character, "count": count})
+    print(dict_list)
