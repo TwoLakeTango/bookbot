@@ -1,10 +1,11 @@
+import sys
 def get_book_text(filepath):
     with open(filepath) as f:
         file_contents = f.read()
     return str(file_contents)
 
 def get_num_words():
-    book_text_words = get_book_text("books/frankenstein.txt").split()
+    book_text_words = get_book_text(sys.argv[1]).split()
     word_count = 0
     for word in book_text_words:
         word_count += 1
@@ -12,7 +13,7 @@ def get_num_words():
     return word_count
 
 def character_frequency():
-    book_text_lower = get_book_text("books/frankenstein.txt").lower()
+    book_text_lower = get_book_text(sys.argv[1]).lower()
     #unique_characters_list = []
     unique_character_count_dict = {}
     for character in book_text_lower:

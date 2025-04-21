@@ -1,5 +1,11 @@
+import sys
+
+if len(sys.argv) < 2:
+    print("Usage: python3 main.py <path_to_book>")
+    raise sys.exit(1) 
+
 def main():
-    book_text = get_book_text("books/frankenstein.txt")
+    book_text = get_book_text(sys.argv[1])
     #print(book_text[:100])
 def get_book_text(filepath):
     with open(filepath) as f:
